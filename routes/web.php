@@ -1,18 +1,10 @@
 <?php
 
+use App\Livewire\About;
+use App\Livewire\Posts\Index;
+use App\Livewire\Users\Show;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/about', About::class)->name('about');
+Route::get('/post', Index::class)->name('post');
+route::get('/user/{user}', Show::class)->name('user.show');
