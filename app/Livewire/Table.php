@@ -3,19 +3,27 @@
 namespace App\Livewire;
 
 use App\Models\Post;
+use Livewire\Attributes\Title;
 use Livewire\Component;
 
 class Table extends Component
 {
 
-    // public $data = [];
 
+    #[Title('Add Title')]
+    public $title = [];
+    public $coment = [];
 
+    public function add()
+    {
+        Post::insert([
+            'title' => $this->title,
+            'coment' => $this->coment
+        ]);
 
-    // public function mount()
-    // {
-    //     $this->data = Post::all();
-    // }
+        $this->reset('title');
+        $this->reset('coment');
+    }
 
     public function delete(Post $post)
     {

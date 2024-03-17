@@ -1,5 +1,10 @@
 <div>
     <h2>Post : </h2>
+    <form wire:submit="add">
+        <input type="text" placeholder="masukkan title" wire:model="title">
+        <input type="text" placeholder="masukkan coment" wire:model="coment">
+        <button type="submit">Submit</button>
+    </form>
     <table border="1">
         <thead>
             <th>Title</th>
